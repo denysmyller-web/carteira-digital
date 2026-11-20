@@ -74,7 +74,7 @@ O repositório Git local incluído registra o trabalho efetivamente realizado, c
 
 Use `git log --oneline` para consultar a sequência. Os registros de execução estão em `docs/evidencias-tdd.txt`. Não se trata de um histórico anterior do aluno: este histórico foi criado durante a implementação assistida.
 
-O enunciado solicita entrega pelo link de um repositório público no GitHub. Este projeto foi criado **localmente e ainda não foi publicado**. Ao publicar, envie a branch `main` existente para preservar os commits; carregar arquivos pela interface web em um único commit perde o histórico TDD.
+Repositório público para entrega: [denysmyller-web/carteira-digital](https://github.com/denysmyller-web/carteira-digital). A publicação usa a branch `main` e preserva os commits do ciclo TDD.
 
 ## Relação com as aulas
 
