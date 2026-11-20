@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label": "Carteira: testar e medir cobertura", "type": "shell", "command": ".\\executar.cmd verificar", "group": {"kind": "test", "isDefault": true}, "problemMatcher": []},
+    {"label": "Carteira: testar com Selenium", "type": "shell", "command": ".\\executar.cmd interface", "problemMatcher": []},
+    {"label": "Carteira: iniciar aplicação", "type": "shell", "command": ".\\executar.cmd iniciar", "problemMatcher": []}
+  ]
+}

@@ -17,34 +17,42 @@ public class ContaService {
     }
     @Transactional(readOnly = true)
     public Double consultarSaldo(Long id) {
-        if (id == null || id <= 0) throw new IllegalArgumentException("Informe um identificador positivo.");
+        validarId(id);
         return repository.findById(id).orElseThrow(() -> new ContaNaoEncontradaException(id)).getSaldo();
     }
     @Transactional
     public Conta depositar(Long id, Double valor) {
-        if (valor == null || !Double.isFinite(valor) || valor <= 0)
-            throw new IllegalArgumentException("O valor deve ser positivo e finito.");
-        if (id == null || id <= 0) throw new IllegalArgumentException("Informe um identificador positivo.");
-        Conta conta = repository.buscarParaAtualizar(id).orElseThrow(() -> new ContaNaoEncontradaException(id));
+        validarValor(valor);
+        validarId(id);
+        Conta conta = buscarParaAtualizar(id);
         conta.setSaldo(conta.getSaldo() + valor);
         return repository.save(conta);
     }
     @Transactional
     public void transferir(Long origemId, Long destinoId, Double valor) {
-        if (valor == null || !Double.isFinite(valor) || valor <= 0)
-            throw new IllegalArgumentException("O valor deve ser positivo e finito.");
-        if (origemId == null || destinoId == null || origemId <= 0 || destinoId <= 0)
-            throw new IllegalArgumentException("Informe identificadores positivos.");
+        validarValor(valor);
+        validarId(origemId);
+        validarId(destinoId);
         if (origemId.equals(destinoId)) throw new IllegalArgumentException("As contas devem ser diferentes.");
         // Bloqueios sempre na mesma ordem evitam deadlock em transferências opostas.
         Long menor = Math.min(origemId, destinoId), maior = Math.max(origemId, destinoId);
-        Conta primeira = repository.buscarParaAtualizar(menor).orElseThrow(() -> new ContaNaoEncontradaException(menor));
-        Conta segunda = repository.buscarParaAtualizar(maior).orElseThrow(() -> new ContaNaoEncontradaException(maior));
+        Conta primeira = buscarParaAtualizar(menor);
+        Conta segunda = buscarParaAtualizar(maior);
         Conta origem = origemId.equals(menor) ? primeira : segunda;
         Conta destino = destinoId.equals(menor) ? primeira : segunda;
         if (origem.getSaldo() < valor) throw new SaldoInsuficienteException();
         origem.setSaldo(origem.getSaldo() - valor);
         destino.setSaldo(destino.getSaldo() + valor);
         repository.save(origem); repository.save(destino);
+    }
+    private Conta buscarParaAtualizar(Long id) {
+        return repository.buscarParaAtualizar(id).orElseThrow(() -> new ContaNaoEncontradaException(id));
+    }
+    private void validarValor(Double valor) {
+        if (valor == null || !Double.isFinite(valor) || valor <= 0)
+            throw new IllegalArgumentException("O valor deve ser positivo e finito.");
+    }
+    private void validarId(Long id) {
+        if (id == null || id <= 0) throw new IllegalArgumentException("Informe um identificador positivo.");
     }
 }

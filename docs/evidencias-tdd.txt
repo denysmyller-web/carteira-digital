@@ -1,0 +1,30 @@
+RED
+[ERROR] Tests run: 26, Failures: 20, Errors: 6, Skipped: 0, Time elapsed: 1.574 s <<< FAILURE! -- in br.com.ada.carteira.service.ContaServiceTest
+java.lang.UnsupportedOperationException
+java.lang.UnsupportedOperationException
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.UnsupportedOperationException>
+Caused by: java.lang.UnsupportedOperationException
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.UnsupportedOperationException>
+Caused by: java.lang.UnsupportedOperationException
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.UnsupportedOperationException>
+Caused by: java.lang.UnsupportedOperationException
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.UnsupportedOperationException>
+Caused by: java.lang.UnsupportedOperationException
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.UnsupportedOperationException>
+Caused by: java.lang.UnsupportedOperationException
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.UnsupportedOperationException>
+Caused by: java.lang.UnsupportedOperationException
+
+GREEN
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.468 s -- in br.com.ada.carteira.controller.ContaControllerTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.388 s -- in br.com.ada.carteira.service.ContaServiceTest
+[INFO] Tests run: 41, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+VERIFY
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.723 s -- in br.com.ada.carteira.controller.ContaControllerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.987 s -- in br.com.ada.carteira.interfaceweb.DepositoSeleniumTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.509 s -- in br.com.ada.carteira.service.ContaServiceTest
+[INFO] Tests run: 43, Failures: 0, Errors: 0, Skipped: 0
+[INFO] All coverage checks have been met.
+[INFO] BUILD SUCCESS
