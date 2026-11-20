@@ -76,12 +76,6 @@ Use `git log --oneline` para consultar a sequência. Os registros de execução 
 
 Repositório público para entrega: [denysmyller-web/carteira-digital](https://github.com/denysmyller-web/carteira-digital). A publicação usa a branch `main` e preserva os commits do ciclo TDD.
 
-## Relação com as aulas
 
-Foram consultados os tópicos Introdução aos Testes Automatizados, Testes Unitários, Testes Unitários com Spring, Test-Driven Development, Red-Green-Refactor, Testes de Integração, Testes de Interface e Abrangência, no [módulo Testes Automatizados I da turma 1745](https://lms.ada.tech/student/topics/by-class-id/aa5fa9b3-9f0b-467d-a9c5-44ff669fa2e3/by-module-id/8b425c31-ec82-4b3b-8d2b-55e60624c400).
 
-O material apresenta alguns exemplos com `@Before`/`@After`; neste projeto JUnit 5 usa `@BeforeEach`/`@AfterEach`. Mockito é inicializado por `MockitoExtension`. As versões das bibliotecas foram atualizadas em relação aos exemplos antigos para compatibilidade com o ambiente.
 
-Validação realizada com JDK 25 e Spring Boot 3.5.16. Compatibilidade conferida na [documentação oficial do Spring Boot](https://docs.spring.io/spring-boot/3.5/system-requirements.html). JaCoCo 0.8.14 suporta Java 25 conforme o [histórico oficial](https://www.jacoco.org/jacoco/trunk/doc/changes.html).
-
-Veja `docs/APRESENTACAO.md` para um roteiro de defesa de sete minutos.
